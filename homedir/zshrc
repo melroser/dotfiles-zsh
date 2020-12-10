@@ -1,0 +1,19 @@
+# $HOME/.zshrc
+#
+# ZSH commands to execute at the start of an interactive session.
+#
+
+echo ""
+echo ""
+echo ""
+echo "------------------------------------------------"
+echo "                                                "
+echo "           melroser's ZSH dotfiles loaded       "
+echo "                                                "
+echo "------------------------------------------------"
+echo ""
+echo ""
+
+
+# Source other zsh files
+source ~/.aliases_zsh
