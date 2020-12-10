@@ -4,9 +4,9 @@
 #
 
 dir=`pwd`/homedir                   			# dotfiles directory
-time_stamp=$(date +%Y-%m-%d-%T)
+time_stamp=$(date +%Y-%m-%d-%T)				# Timestamp for Backup dir
 backup="${HOME}/.backup_dotfiles_zsh/${time_stamp}"	# old dotfiles backup directory
-dotfiles=" aliases_zsh zshrc zshenv antigenrc"				# list of files/folders to symlink in homedir
+dotfiles="aliases_zsh antigenrc vimrc zshenv zshrc"	# list of files/folders to symlink in homedir
 
 ########## Backup & Install Custom ZSH Dotfiles
 #
