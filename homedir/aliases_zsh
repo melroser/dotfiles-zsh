@@ -17,6 +17,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -43,6 +44,8 @@ alias cls='clear'
 alias sudo='sudo '
 
 # copy with a progress bar.
-alias cp='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
+#alias cp='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
 
+alias fprobe='/usr/local/Cellar/fprobe/1.1/sbin/fprobe'
 
+alias vimrc="cd ~/.vim/"

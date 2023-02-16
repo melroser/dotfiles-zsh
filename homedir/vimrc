@@ -11,7 +11,7 @@
         " License: lgplv3 (http://www.gnu.org/licenses/lgpl.html)
         " Source: [Github](http://www.github.com/melroser/dotfiles)
     " }
-    " Decription
+    " Description
     " {
         " This Vim configuration file has been optimized for CLI Python development
         " This file is loaded from the user's home directory.
@@ -22,30 +22,30 @@
 " {
     " ---------- Initialization--------------------
     " {
-        set modelines=4                 " Look for modeline cmd
+"        set modelines=4                 " Look for modeline cmd
     " }
     " ---------- Vundle Config --------------------
     " {
         " Setup
-        "set nocompatible        " Must be set before vundle configured
-        "filetype off            " Disable filetype checking
-        "set rtp+=~/.vim/bundle/Vundle.vim
-        "call vundle#begin()
+        " set nocompatible        " Must be set before vundle configured
+        " filetype off            " Disable filetype checking
+        " set rtp+=~/.vim/bundle/Vundle.vim
+        " call vundle#begin()
 
         " let Vundle manage Vundle, required
-        "Plugin 'VundleVim/Vundle.vim'
+        " Plugin 'VundleVim/Vundle.vim'
 
         " Load plugins from vundles.vim
         "if filereadable(expand("~/.vim/vundles.vim"))
-        "    source ~/.vim/vundles.vim
-        "endif
+           " source ~/.vim/vundles.vim
+        " endif
 
         " Teardown
-        "call vundle#end()            " required
-        "filetype plugin indent on    " required
+       " call vundle#end()            " required
+       " filetype plugin indent on    " required
 
         " To ignore plugin indent changes, instead use:
-        "filetype plugin on
+        " filetype plugin on
         "
         " Brief help
         " :PluginList          - list configured plugins
@@ -81,7 +81,7 @@
         set virtualedit=onemore                                 " Allow for cursor beyond last character
         set hidden                                              " Allow buffer switching without saving
 
-        " this makes the color after the textwidth column highlighte
+        " this makes the color after the textwidth column highlighted
         set textwidth=160
         set expandtab                           " Spaces instead of TAB
         set tabstop=4                           " Hard TAB displays as 4 columns
@@ -122,12 +122,14 @@
         set sidescrolloff=5     " minimum lines to keep right of cursor
 
         if &shell =~# 'fish$'
-            set shell=/bin/bash
+            set shell=/bin/zsh
         endif
 
 
         " Completion Settings
         set complete-=i
+:q!
+:q1
 
         " Automatically open and close the popup menu / preview window
         au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -140,7 +142,7 @@
     " ---------- GVim/MacVim Settings --------------------
     " {
         if !has('gui')
-            set term=$TERM                      " Make arrow and other keys work
+            set term=$TERM  " Make arrow and other keys work
         endif
 
         if &encoding ==# 'latin1' && has('gui_running')
@@ -174,7 +176,6 @@
 
         inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-
     " }
     " ---------- Undo-history & swap --------------------
     " {
@@ -184,8 +185,8 @@
         set nobackup
         set viminfo='100,:200,<50,s10,h
 
-        if &history < 1000
-            set history=1000
+        if &history < 10000
+            set history=10000
         endif
         if &tabpagemax < 50
             set tabpagemax=50
@@ -210,14 +211,14 @@
 " }
 
 " Eyecandy:
-"" {
+" {
     " ---------- General --------------------
     " {
         " Fonts:
         if has('gui')
             "set guifont=Ubuntu Mono:h18
-            set guifont=PowerlineSymbols:h18
-            "set guifont=Monofonto:h24
+            "set guifont=PowerlineSymbols:h18
+            set guifont=Monofonto:h24
             " set guifont=Meslo\ LG\ S\ for\ Powerline:h14
             " set guifont=Source\ Code\ Pro\ for\ Powerline:h14
             " set guifont=Anonymous\ Pro\ for\ powerline:h16
@@ -242,7 +243,7 @@
     " }
     " ---------- Colorscheme --------------------
     " {
-        "set guifont=Ubuntu\ Mono\ derivative\ Powerline:h20
+        set guifont=Ubuntu\ Mono\ derivative\ Powerline:h20
         " Allow color schemes to do bright colors without forcing bold.
         if &t_Co == 8 && $TERM !~# '^linux'
             set t_Co=16
@@ -251,7 +252,7 @@
 
         set background=dark
         "colorscheme molokai " Load a colorscheme
-        "colorscheme slate " Load a colorscheme
+        colorscheme slate " Load a colorscheme
 
     " }
     " ---------- Statusline --------------------
@@ -310,8 +311,8 @@
         cmap Tabe tabe
 
         " Allow saving of files as sudo when I forgot to start vim using sudo.
-        cmap w!! w !sudo tee > /dev/null %
-        cmap W!! w !sudo tee > /dev/null %
+        "cmap w!! w !sudo tee > /dev/null %
+        "cmap W!! w !sudo tee > /dev/null %
 
         " Visual shifting (does not exit Visual mode)
         vnoremap < <gv
@@ -329,6 +330,7 @@
 
         " use spacebar to search
         map <Space> /
+
         " Toggle highlighted search
         map <leader>hl :set invhlsearch<CR>
 
@@ -654,6 +656,7 @@
     " {
         " % Highlights till end of line
         noremap % v$
+        highlight CursorLine   cterm=NONE ctermbg=NONE ctermfg=darkgreen
 
     " }
     " ---------- SubSetting --------------------
@@ -663,8 +666,8 @@
 
 " Modlines:
 " {
-    " mvim: set nospell:
-    " vim: set foldmarker={,} foldlevel=1 foldmethod=marker nospell:
+  "   mvim: set nospell:
+  "   vim: set foldmarker={,} foldlevel=1 foldmethod=marker nospell:
     " vi: set nospell:
 " }
 
