@@ -3,7 +3,10 @@
 # ZSH Environment Variables and Exports
 #
 # export PATH=$PATH:/usr/local/opt/python@3.9/libexec/bin
+#
+export PATH=$PATH:~/.bin
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
+export MYVIMRC=~$HOME/.vim/vimrc.vim
 
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters

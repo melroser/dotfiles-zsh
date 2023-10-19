@@ -1,56 +1,93 @@
 # $HOME/.zshrc
 #
 # ZSH commands to execute at the start of an interactive session.
-#
 
-echo ""
-echo "------------------------------------------------"
-echo "           melroser's dotfiles loaded           "
-echo "------------------------------------------------"
-echo ""
+
+ echo ""
+ echo "------------------------------------------------"
+ echo "           melroser's dotfiles loaded           "
+ echo "------------------------------------------------"
+ echo ""
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+ fi
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh/site-functions/*
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /opt/homebrew/share/zsh-completions/*
+source /opt/homebrew/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+
+
 
 export HISTFILESIZE=5000000
 export HISTSIZE=5000000
 setopt EXTENDED_HISTORY
 
-if type brew &>/dev/null; then
-	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-	autoload -Uz compinit
-	compinit
+if type brew &>/dev/null; then
+
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit
+    compinit
 
     autoload -U promptinit; promptinit
-    prompt pure
+    prompt p10k
 fi
 
 # Load Antigen
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 # Load Antigen configurations
 antigen init ~/.antigenrc
+
 
 # Tab completion matches lower and upper case
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Source other zsh files
+
 source ~/.aliases_zsh
 source ~/.zshenv
-
-
-
 # export PATH="/usr/local/opt/node@16/bin:$PATH"
 
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/melroser/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/melroser/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/melroser/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/melroser/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/node@16/bin:$PATH"
-
+export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Completions
 eval "$(op completion zsh)"; compdef _op op
-source /Users/melroser/.config/op/plugins.sh
+# source /opt/homebrew/share/zsh/site-functions/async
+# source /opt/homebrew/share/zsh/site-functions/_gh
+# source /opt/homebrew/completions/zsh/_brew
+# source /opt/homebrew/share/zsh/site-functions/_rg
+# source /opt/homebrew/share/zsh/site-functions/_brew
+# source /opt/homebrew/share/zsh/site-functions/_hugo
+# source /opt/homebrew/share/zsh/site-functions/_astro
+# source /opt/homebrew/share/zsh/site-functions/_poetry
+# source /opt/homebrew/share/zsh/site-functions/_highlight
+# source /opt/homebrew/share/zsh/site-functions/_yt-dlp
+# source /opt/homebrew/share/zsh/site-functions/prompt_pure_setup
+# source /opt/homebrew/opt/antigen/share/antigen/antigen.zsh
+# source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.zsh
+# source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
+# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# tabtab source for packages
+# uninstall by removing these lines
+#[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+# test -f '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc'  source /Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc 
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
