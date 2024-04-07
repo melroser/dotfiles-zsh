@@ -1,13 +1,30 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # $HOME/.zshrc
 #
 # ZSH commands to execute at the start of an interactive session.
 #
+
 
 echo ""
 echo "------------------------------------------------"
 echo "           melroser's dotfiles loaded           "
 echo "------------------------------------------------"
 echo ""
+# cowsay -f
+# it2attention fireworks
+# echo "Tip of the day:"
+# it2tip
+
+
+
 
 export HISTFILESIZE=5000000
 export HISTSIZE=5000000
@@ -40,6 +57,7 @@ source ~/.zshenv
 
 # export PATH="/usr/local/opt/node@16/bin:$PATH"
 
+
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/melroser/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/melroser/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -47,6 +65,7 @@ source ~/.zshenv
 # if [ -f '/Users/melroser/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/melroser/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 
+# export TRACE="$TRACE\n$BASH_SOURCE --> $(realpath $BASH_SOURCE)"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/node@16/bin:$PATH"
 
@@ -54,3 +73,40 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 # Completions
 eval "$(op completion zsh)"; compdef _op op
 source /Users/melroser/.config/op/plugins.sh
+
+# tabtab source for packages
+# uninstall by removing these lines
+#[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+# export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+function hugoserver-1 {
+    cd ~/path/to/1
+    hugo server --buildDrafts --watch --verbose --source="/path/to/1" --config="/path/to/1/config.toml" --port=1377
+}
+
+function hugodeploy-1 {
+   cd /path/to/1
+   rm -rf /tmp/mysite.com
+   chmod -R 755 /path/to/1/static/
+   echo "GENERATING..."
+   hugo --config="/path/to/1/config.toml" --baseURL="http://mysite.com" -s /path/to/1/ -d /tmp/mysite.com
+   echo "SYNCING..."
+   /path/to/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 --exclude '.well-known' /tmp/mysite.com/ myuser@remote-web-host.com:/home/myuser/path/to/1
+}
+
+
+
+
+
+export PATH="/usr/local/opt/qt@5/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+  source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

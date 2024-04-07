@@ -4,7 +4,7 @@
 #
 
 # My Aliases
-alias ls='ls -F'
+alias ls='ls -FG'
 alias la='ls -A'
 alias l='ls -1'
 alias ll='ls -og'
@@ -48,4 +48,14 @@ alias sudo='sudo '
 
 alias fprobe='/usr/local/Cellar/fprobe/1.1/sbin/fprobe'
 
-alias vimrc="cd ~/.vim/"
+
+alias sudo='sudo '
+
+alias scr='script -r -a -d -k ~/tmp/typescript-$(date +%FT%T)'
+
+alias @@='$($(fc -ln -1) |& tail -1)'
+
+
+
+
+alias gourcecat='gource -f -1280x720   --bloom-multiplier 2.0 --bloom-intensity .1  --realtime --camera-mode track  --auto-skip-seconds 5   --file-idle-time 60 --key'

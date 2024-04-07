@@ -27,13 +27,13 @@
     " ---------- Vundle Config --------------------
     " {
         " Setup
-        " set nocompatible        " Must be set before vundle configured
-        " filetype off            " Disable filetype checking
-        " set rtp+=~/.vim/bundle/Vundle.vim
-        " call vundle#begin()
+        "set nocompatible        " Must be set before vundle configured
+        "filetype off            " Disable filetype checking
+        "set rtp+=~/.vim/bundle/Vundle.vim
+        "call vundle#begin()
 
-        " let Vundle manage Vundle, required
-        " Plugin 'VundleVim/Vundle.vim'
+        "let Vundle manage Vundle, required
+        "Plugin 'VundleVim/Vundle.vim'
 
         " Load plugins from vundles.vim
         "if filereadable(expand("~/.vim/vundles.vim"))
