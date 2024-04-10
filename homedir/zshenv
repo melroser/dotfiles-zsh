@@ -5,5 +5,9 @@
 # export PATH=$PATH:/usr/local/opt/python@3.9/libexec/bin
 # export TRACE="$TRACE\n$BASH_SOURCE --> $(realpath $BASH_SOURCE)"
 
-
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+#
+export PATH=$PATH:~/.bin
+
+
+export MYVIMRC=~$HOME/.vim/vimrc.vim
