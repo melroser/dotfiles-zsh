@@ -10,6 +10,9 @@ fi
 # $HOME/.zshrc
 #
 # ZSH commands to execute at the start of an interactive session.
+test -e /Users/melroser/.iterm2_shell_integration.zsh && source /Users/melroser/.iterm2_shell_integration.zsh || true
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
 
 
 echo ""
@@ -29,10 +32,9 @@ echo ""
    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
  fi
 
-# export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /opt/homebrew/share/zsh/site-functions/*
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh/site-functions/*
 # source /opt/homebrew/share/zsh-completions/*
 # source /opt/homebrew/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -52,6 +54,7 @@ if type brew &>/dev/null; then
     compinit
 
     autoload -U promptinit; promptinit
+    # prompt power10k
     prompt pure
 fi
 
@@ -90,6 +93,8 @@ eval "$(op completion zsh)"; compdef _op op
 source /Users/melroser/.config/op/plugins.sh
 
 # export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/usr/local/opt/node@16/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
@@ -101,7 +106,6 @@ eval "$(op completion zsh)"; compdef _op op
 # source /opt/homebrew/share/zsh/site-functions/_rg
 # source /opt/homebrew/share/zsh/site-functions/_brew
 # source /opt/homebrew/share/zsh/site-functions/_hugo
-# source /opt/homebrew/share/zsh/site-functions/_astro
 # source /opt/homebrew/share/zsh/site-functions/_poetry
 # source /opt/homebrew/share/zsh/site-functions/_highlight
 # source /opt/homebrew/share/zsh/site-functions/_yt-dlp
@@ -137,7 +141,7 @@ function hugodeploy-1 {
 export PATH="/usr/local/opt/qt@5/bin:$PATH"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
-# test -f '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc'  source /Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc 
+test -f '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc'  source /Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -149,3 +153,36 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  # zsh
+  source <(fzf --zsh)
+
+
+ source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+ source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+ chruby ruby-3.1.3
+
+# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+# export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+
+
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+source ~/.flutter_tools.sh
+
+neofetch

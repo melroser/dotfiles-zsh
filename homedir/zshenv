@@ -9,5 +9,10 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/h
 #
 export PATH=$PATH:~/.bin
 
+export PATH=$PATH:/usr/local/texlive/2022basic/bin/universal-darwin
 
 export MYVIMRC=~$HOME/.vim/vimrc.vim
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+
+export HOMEBREW_NO_ANALYTICS=1

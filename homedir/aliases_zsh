@@ -53,12 +53,24 @@ alias @@='$($(fc -ln -1) |& tail -1)'
 
 alias gourcecat='gource -f -1280x720   --bloom-multiplier 2.0 --bloom-intensity .1  --realtime --camera-mode track  --auto-skip-seconds 5   --file-idle-time 60 --key'
 
-alias vimrc="cd ~/.vim/"
+alias vimrc='cd ~/.vim/'
 
 alias hb='hugo --gc'
 alias hs='hugo server --disableFastRender --ignoreCache'
 alias hh='open http://localhost:1313'
 
 
+alias mia='cd /Users/melroser/Workspace/Github/devs.miami'
 alias lol='cd /Users/melroser/Workspace/Github/fullstack.lol'
 alias fyi='cd /Users/melroser/Workspace/Github/film.fyi'
+
+
+alias wrk='cd ~/Workspace'
+alias job='cd ~/Documents/Job\ Hunt\ 2023/'
+
+
+
+alias info='info --vi-keys'
+
+
+alias f='open -a Finder'
