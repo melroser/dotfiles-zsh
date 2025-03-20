@@ -4,21 +4,19 @@
 #
 # export PATH=$PATH:/usr/local/opt/python@3.9/libexec/bin
 # export TRACE="$TRACE\n$BASH_SOURCE --> $(realpath $BASH_SOURCE)"
+export HOMEBREW_PATH=/opt/homebrew
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-#
+#export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$HOMEBREW_PATH/share/zsh-syntax-highlighting/highlighters
+
 export PATH=$PATH:~/.bin
 
-export PATH=$PATH:/usr/local/texlive/2022basic/bin/universal-darwin
+export PATH=$PATH:$HOMEBREW_PATH/texlive/2022basic/bin/universal-darwin
 
 export MYVIMRC=~$HOME/.vim/vimrc.vim
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$HOMEBREW_PATH/share/zsh-syntax-highlighting/highlighters
 
 export HOMEBREW_NO_ANALYTICS=1
-
-export HOMEBREW_PATH=/usr/local
-
 
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 

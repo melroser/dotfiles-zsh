@@ -18,11 +18,11 @@ antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-se
 #antigen theme denysdovhan/spaceship-prompt
 # antigen theme robbyrussell
 # antigen theme powerline
-# antigen theme romkatv/powerlevel10k
+antigen theme romkatv/powerlevel10k
 # antigen theme denysdovhan/spaceship-prompt
 # antigen theme robbyrussell
-# antigen theme powerline
-antigen theme pure
+#antigen theme powerline
+#antigen theme pure
 # antigen theme spaceship
 
 # Tell Antigen that you're done.
