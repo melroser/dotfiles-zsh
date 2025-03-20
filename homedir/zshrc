@@ -12,8 +12,8 @@
 #
 # ZSH commands to execute at the start of an interactive session.
 test -e /Users/melroser/.iterm2_shell_integration.zsh && source /Users/melroser/.iterm2_shell_integration.zsh || true
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+source $HOMEBREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$HOMEBREW_PATH/share/zsh-syntax-highlighting/highlighters
 
 
 echo ""
@@ -26,7 +26,7 @@ echo ""
 # echo "Tip of the day:"
 # it2tip
 
-/opt/homebrew/bin/neofetch
+$HOMEBREW_PATH/bin/neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -37,12 +37,12 @@ echo ""
    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
  fi
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /opt/homebrew/share/zsh/site-functions/*
-# source /opt/homebrew/share/zsh-completions/*
-# source /opt/homebrew/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$HOMEBREW_PATH/share/zsh-syntax-highlighting/highlighters
+# source $HOMEBREW_PATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $HOMEBREW_PATH/share/zsh/site-functions/*
+# source $HOMEBREW_PATH/share/zsh-completions/*
+# source $HOMEBREW_PATH/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# source $HOMEBREW_PATH/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
 
@@ -63,7 +63,7 @@ if type brew &>/dev/null; then
 fi
 
 # Load Antigen
-source /opt/homebrew/share/antigen/antigen.zsh
+source /usr/local/share/antigen/antigen.zsh
 # source /usr/local/share/antigen/antigen.zsh
 
 # Load Antigen configurations
@@ -95,27 +95,27 @@ source ~/.zshenv
 # eval "$(op completion zsh)"; compdef _op op
 #source /Users/melroser/.config/op/plugins.sh
 
-# export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="$HOMEBREW_PATH/bin:$PATH"
 # export PATH="/usr/local/opt/node@16/bin:$PATH"
-#export PATH="/opt/homebrew/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+#export PATH="$HOMEBREW_PATH/bin:$PATH"
+# export PATH="$HOMEBREW_PATH/opt/openjdk/bin:$PATH"
+# export PATH="$HOMEBREW_PATH/opt/openjdk/bin:$PATH"
 
 # Completions
 #  eval "$(op completion zsh)"; compdef _op op
-# source /opt/homebrew/share/zsh/site-functions/async
-# source /opt/homebrew/share/zsh/site-functions/_gh
-# source /opt/homebrew/completions/zsh/_brew
-# source /opt/homebrew/share/zsh/site-functions/_rg
-# source /opt/homebrew/share/zsh/site-functions/_brew
-# source /opt/homebrew/share/zsh/site-functions/_hugo
-# source /opt/homebrew/share/zsh/site-functions/_poetry
-# source /opt/homebrew/share/zsh/site-functions/_highlight
-# source /opt/homebrew/share/zsh/site-functions/_yt-dlp
-# source /opt/homebrew/share/zsh/site-functions/prompt_pure_setup
-# source /opt/homebrew/opt/antigen/share/antigen/antigen.zsh
-# source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.zsh
-# source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
+# source $HOMEBREW_PATHshare/zsh/site-functions/async
+# source $HOMEBREW_PATH/share/zsh/site-functions/_gh
+# source $HOMEBREW_PATH/completions/zsh/_brew
+# source $HOMEBREW_PATH/share/zsh/site-functions/_rg
+# source $HOMEBREW_PATH/share/zsh/site-functions/_brew
+# source $HOMEBREW_PATH/share/zsh/site-functions/_hugo
+# source $HOMEBREW_PATH/share/zsh/site-functions/_poetry
+# source $HOMEBREW_PATH/share/zsh/site-functions/_highlight
+# source $HOMEBREW_PATH/share/zsh/site-functions/_yt-dlp
+# source $HOMEBREW_PATH/share/zsh/site-functions/prompt_pure_setup
+# source $HOMEBREW_PATH/opt/antigen/share/antigen/antigen.zsh
+# source $HOMEBREW_PATH/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.zsh
+# source $HOMEBREW_PATH/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -161,16 +161,16 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
   source <(fzf --zsh)
 
 
- source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
- source /opt/homebrew/opt/chruby/share/chruby/auto.sh
- chruby ruby-3.1.3
+# source $HOMEBREW_PATH/opt/chruby/share/chruby/chruby.sh
+#  source $HOMEBREW_PATH/opt/chruby/share/chruby/auto.sh
+#  chruby ruby-3.1.3
 
-# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-# export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
-# export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+# export PATH="$HOMEBREW_PATH/opt/openjdk@11/bin:$PATH"
+# export PATH="$HOMEBREW_PATH/opt/openjdk@11/bin:$PATH"
+# export PATH="$HOMEBREW_PATH/opt/openjdk@11/bin:$PATH"
+# export CPPFLAGS="-I$HOMEBREW_PATH/opt/openjdk@11/include"
+# export LDFLAGS="-L$HOMEBREW_PATH/opt/libffi/lib"
+# export CPPFLAGS="-I$HOMEBREW_PATH/opt/libffi/include"
 
 
 # !! Contents within this block are managed by 'conda init' !!
@@ -191,14 +191,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # neofetch
 #
 #
-#source /opt/homebrew/share/zsh/site-functions/.*
+#source $HOMEBREW_PATH/share/zsh/site-functions/.*
 
 # export PATH=/usr/local/anaconda3/bin:$PATH
-# export PATH=/opt/homebrew/anaconda3/bin:$PATH
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# export PATH=$HOMEBREW_PATH/anaconda3/bin:$PATH
+# source $HOMEBREW_PATH/share/powerlevel10k/powerlevel10k.zsh-theme
 
-source  /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source  $HOMEBREW_PATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HOMEBREW_PATH/opt/llvm/bin:$PATH"

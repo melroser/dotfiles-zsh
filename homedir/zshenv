@@ -17,6 +17,8 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlightin
 
 export HOMEBREW_NO_ANALYTICS=1
 
+export HOMEBREW_PATH=/usr/local
+
 
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 
