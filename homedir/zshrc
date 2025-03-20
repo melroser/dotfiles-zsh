@@ -3,11 +3,11 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 #
 # ZSH commands to execute at the start of an interactive session.
@@ -26,6 +26,10 @@ echo ""
 # echo "Tip of the day:"
 # it2tip
 
+/opt/homebrew/bin/neofetch
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -34,8 +38,8 @@ echo ""
  fi
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh/site-functions/*
+# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /opt/homebrew/share/zsh/site-functions/*
 # source /opt/homebrew/share/zsh-completions/*
 # source /opt/homebrew/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -54,8 +58,8 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 
-    autoload -U promptinit; promptinit
-    prompt pure
+    autoload -U promptinit;
+    prompt p10k
 fi
 
 # Load Antigen
@@ -92,7 +96,7 @@ source ~/.zshenv
 #source /Users/melroser/.config/op/plugins.sh
 
 # export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/usr/local/opt/node@16/bin:$PATH"
+# export PATH="/usr/local/opt/node@16/bin:$PATH"
 #export PATH="/opt/homebrew/bin:$PATH"
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -118,26 +122,26 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 #[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 # export PATH="/usr/local/opt/node@14/bin:$PATH"
 
-function hugoserver-1 {
-    cd ~/path/to/1
-    hugo server --buildDrafts --watch --verbose --source="/path/to/1" --config="/path/to/1/config.toml" --port=1377
-}
-
-function hugodeploy-1 {
-   cd /path/to/1
-   rm -rf /tmp/mysite.com
-   chmod -R 755 /path/to/1/static/
-   echo "GENERATING..."
-   hugo --config="/path/to/1/config.toml" --baseURL="http://mysite.com" -s /path/to/1/ -d /tmp/mysite.com
-   echo "SYNCING..."
-   /path/to/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 --exclude '.well-known' /tmp/mysite.com/ myuser@remote-web-host.com:/home/myuser/path/to/1
-}
-
-
+#function hugoserver-1 {
+#    cd ~/path/to/1
+#    hugo server --buildDrafts --watch --verbose --source="/path/to/1" --config="/path/to/1/config.toml" --port=1377
+#}
+#
+#function hugodeploy-1 {
+#   cd /path/to/1
+#   rm -rf /tmp/mysite.com
+#   chmod -R 755 /path/to/1/static/
+#   echo "GENERATING..."
+#   hugo --config="/path/to/1/config.toml" --baseURL="http://mysite.com" -s /path/to/1/ -d /tmp/mysite.com
+#   echo "SYNCING..."
+#   /path/to/rsync -avz --delete --iconv=UTF-8-MAC,UTF-8 --exclude '.well-known' /tmp/mysite.com/ myuser@remote-web-host.com:/home/myuser/path/to/1
+#}
 
 
 
-export PATH="/usr/local/opt/qt@5/bin:$PATH"
+
+
+# export PATH="/usr/local/opt/qt@5/bin:$PATH"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 test -f '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc'  source /Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc 
@@ -146,7 +150,7 @@ test -f '/Users/melroser/Library/Preferences/netlify/helper/path.zsh.inc' && sou
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+# export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -170,18 +174,31 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 
-source ~/.flutter_tools.sh
+# source ~/.flutter_tools.sh
 
-neofetch
+# neofetch
+#
+#
+#source /opt/homebrew/share/zsh/site-functions/.*
+
+# export PATH=/usr/local/anaconda3/bin:$PATH
+# export PATH=/opt/homebrew/anaconda3/bin:$PATH
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+source  /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

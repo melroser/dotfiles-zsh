@@ -53,7 +53,8 @@ alias @@='$($(fc -ln -1) |& tail -1)'
 
 alias gourcecat='gource -f -1280x720   --bloom-multiplier 2.0 --bloom-intensity .1  --realtime --camera-mode track  --auto-skip-seconds 5   --file-idle-time 60 --key'
 
-alias vimrc='cd ~/.vim/'
+alias vim='/Applications/MacVim.app/Contents/bin/vim'
+alias vimrc='vim ~/.vimrc'
 
 alias hb='hugo --gc'
 alias hs='hugo server --disableFastRender --ignoreCache'
@@ -65,8 +66,8 @@ alias lol='cd /Users/melroser/Workspace/Github/fullstack.lol'
 alias fyi='cd /Users/melroser/Workspace/Github/film.fyi'
 
 
-alias wrk='cd ~/Workspace'
-alias job='cd ~/Documents/Job\ Hunt\ 2023/'
+#alias wrk='cd ~/Workspace'
+#alias job='cd ~/Documents/Job\ Hunt\ 2023/'a
 
 
 
@@ -74,3 +75,5 @@ alias info='info --vi-keys'
 
 
 alias f='open -a Finder'
+
+alias zrc='vim ~/.zshrc.'

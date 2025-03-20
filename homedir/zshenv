@@ -16,3 +16,9 @@ export MYVIMRC=~$HOME/.vim/vimrc.vim
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
 
 export HOMEBREW_NO_ANALYTICS=1
+
+
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
